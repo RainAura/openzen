@@ -94,6 +94,10 @@ extends HudElement {
             this.entry = entry;
             this.name = entry != null ? entry.name : module.getName();
             this.key = entry != null ? entry.key : module.getBind().getName();
+            this.displayName = this.name;
+            this.keyName = this.key;
+            this.nameWidth = GlHelper.getStringWidth(this.name, parent.keyFont);
+            this.widthValue = this.nameWidth + 10.0f;
         }
 
         public void startRemove() {
@@ -108,6 +112,10 @@ extends HudElement {
             this.entry = e;
             this.name = e != null ? e.name : this.module.getName();
             this.key = e != null ? e.key : this.module.getBind().getName();
+            this.displayName = this.name;
+            this.keyName = this.key;
+            this.nameWidth = GlHelper.getStringWidth(this.name, this.parent.keyFont);
+            this.widthValue = this.nameWidth + 10.0f;
         }
 
         public boolean isRemoveDone() {
